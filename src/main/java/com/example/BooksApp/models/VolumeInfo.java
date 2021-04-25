@@ -8,6 +8,8 @@ public class VolumeInfo{
     public List<IndustryIdentifier> industryIdentifiers;
     public ReadingModes readingModes;
     public String printType;
+    public List<String> categories;
+    public double averageRating;
     public String maturityRating;
     public boolean allowAnonLogging;
     public String contentVersion;
@@ -17,15 +19,18 @@ public class VolumeInfo{
     public String infoLink;
     public String canonicalVolumeLink;
 
+
     public VolumeInfo() {
     }
 
-    public VolumeInfo(String title, String publisher, List<IndustryIdentifier> industryIdentifiers, ReadingModes readingModes, String printType, String maturityRating, boolean allowAnonLogging, String contentVersion, ImageLinks imageLinks, String language, String previewLink, String infoLink, String canonicalVolumeLink) {
+    public VolumeInfo(String title, String publisher, List<IndustryIdentifier> industryIdentifiers, ReadingModes readingModes, String printType, List<String> categories, double averageRating, String maturityRating, boolean allowAnonLogging, String contentVersion, ImageLinks imageLinks, String language, String previewLink, String infoLink, String canonicalVolumeLink) {
         this.title = title;
         this.publisher = publisher;
         this.industryIdentifiers = industryIdentifiers;
         this.readingModes = readingModes;
         this.printType = printType;
+        this.categories = categories;
+        this.averageRating = averageRating;
         this.maturityRating = maturityRating;
         this.allowAnonLogging = allowAnonLogging;
         this.contentVersion = contentVersion;
@@ -157,5 +162,21 @@ public class VolumeInfo{
 
     public void setCanonicalVolumeLink(String canonicalVolumeLink) {
         this.canonicalVolumeLink = canonicalVolumeLink;
+    }
+
+    public List<String> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(List<String> categories) {
+        this.categories = categories;
+    }
+
+    public double getAverageRating() {
+        return averageRating;
+    }
+
+    public void setAverageRating(double averageRating) {
+        this.averageRating = averageRating;
     }
 }
