@@ -4,9 +4,11 @@ import java.util.List;
 
 public class VolumeInfo{
     public String title;
+    public List<String> authors;
     public String publisher;
     public List<IndustryIdentifier> industryIdentifiers;
     public ReadingModes readingModes;
+    public int pageCount;
     public String printType;
     public List<String> categories;
     public double averageRating;
@@ -19,45 +21,7 @@ public class VolumeInfo{
     public String infoLink;
     public String canonicalVolumeLink;
 
-
     public VolumeInfo() {
-    }
-
-    public VolumeInfo(String title, String publisher, List<IndustryIdentifier> industryIdentifiers, ReadingModes readingModes, String printType, List<String> categories, double averageRating, String maturityRating, boolean allowAnonLogging, String contentVersion, ImageLinks imageLinks, String language, String previewLink, String infoLink, String canonicalVolumeLink) {
-        this.title = title;
-        this.publisher = publisher;
-        this.industryIdentifiers = industryIdentifiers;
-        this.readingModes = readingModes;
-        this.printType = printType;
-        this.categories = categories;
-        this.averageRating = averageRating;
-        this.maturityRating = maturityRating;
-        this.allowAnonLogging = allowAnonLogging;
-        this.contentVersion = contentVersion;
-        this.imageLinks = imageLinks;
-        this.language = language;
-        this.previewLink = previewLink;
-        this.infoLink = infoLink;
-        this.canonicalVolumeLink = canonicalVolumeLink;
-    }
-
-    @Override
-    public String toString() {
-        return "VolumeInfo{" +
-                "title='" + title + '\'' +
-                ", publisher='" + publisher + '\'' +
-                ", industryIdentifiers=" + industryIdentifiers +
-                ", readingModes=" + readingModes +
-                ", printType='" + printType + '\'' +
-                ", maturityRating='" + maturityRating + '\'' +
-                ", allowAnonLogging=" + allowAnonLogging +
-                ", contentVersion='" + contentVersion + '\'' +
-                ", imageLinks=" + imageLinks +
-                ", language='" + language + '\'' +
-                ", previewLink='" + previewLink + '\'' +
-                ", infoLink='" + infoLink + '\'' +
-                ", canonicalVolumeLink='" + canonicalVolumeLink + '\'' +
-                '}';
     }
 
     public String getTitle() {
@@ -66,6 +30,14 @@ public class VolumeInfo{
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public List<String> getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(List<String> authors) {
+        this.authors = authors;
     }
 
     public String getPublisher() {
@@ -92,12 +64,36 @@ public class VolumeInfo{
         this.readingModes = readingModes;
     }
 
+    public int getPageCount() {
+        return pageCount;
+    }
+
+    public void setPageCount(int pageCount) {
+        this.pageCount = pageCount;
+    }
+
     public String getPrintType() {
         return printType;
     }
 
     public void setPrintType(String printType) {
         this.printType = printType;
+    }
+
+    public List<String> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(List<String> categories) {
+        this.categories = categories;
+    }
+
+    public double getAverageRating() {
+        return averageRating;
+    }
+
+    public void setAverageRating(double averageRating) {
+        this.averageRating = averageRating;
     }
 
     public String getMaturityRating() {
@@ -164,19 +160,46 @@ public class VolumeInfo{
         this.canonicalVolumeLink = canonicalVolumeLink;
     }
 
-    public List<String> getCategories() {
-        return categories;
-    }
-
-    public void setCategories(List<String> categories) {
+    public VolumeInfo(String title, List<String> authors, String publisher, List<IndustryIdentifier> industryIdentifiers, ReadingModes readingModes, int pageCount, String printType, List<String> categories, double averageRating, String maturityRating, boolean allowAnonLogging, String contentVersion, ImageLinks imageLinks, String language, String previewLink, String infoLink, String canonicalVolumeLink) {
+        this.title = title;
+        this.authors = authors;
+        this.publisher = publisher;
+        this.industryIdentifiers = industryIdentifiers;
+        this.readingModes = readingModes;
+        this.pageCount = pageCount;
+        this.printType = printType;
         this.categories = categories;
-    }
-
-    public double getAverageRating() {
-        return averageRating;
-    }
-
-    public void setAverageRating(double averageRating) {
         this.averageRating = averageRating;
+        this.maturityRating = maturityRating;
+        this.allowAnonLogging = allowAnonLogging;
+        this.contentVersion = contentVersion;
+        this.imageLinks = imageLinks;
+        this.language = language;
+        this.previewLink = previewLink;
+        this.infoLink = infoLink;
+        this.canonicalVolumeLink = canonicalVolumeLink;
+    }
+
+    @Override
+    public String toString() {
+        return "VolumeInfo{" +
+                "title='" + title + '\'' +
+                ", authors=" + authors +
+                ", publisher='" + publisher + '\'' +
+                ", industryIdentifiers=" + industryIdentifiers +
+                ", readingModes=" + readingModes +
+                ", pageCount=" + pageCount +
+                ", printType='" + printType + '\'' +
+                ", categories=" + categories +
+                ", averageRating=" + averageRating +
+                ", maturityRating='" + maturityRating + '\'' +
+                ", allowAnonLogging=" + allowAnonLogging +
+                ", contentVersion='" + contentVersion + '\'' +
+                ", imageLinks=" + imageLinks +
+                ", language='" + language + '\'' +
+                ", previewLink='" + previewLink + '\'' +
+                ", infoLink='" + infoLink + '\'' +
+                ", canonicalVolumeLink='" + canonicalVolumeLink + '\'' +
+                '}';
     }
 }
