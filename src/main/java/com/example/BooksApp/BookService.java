@@ -90,7 +90,11 @@ be taken into account in the calculation of its author rating.*/
             Author author= new Author(authorsList.get(i),averageRating);
             authors.add(author);
         }
-       return authors;
+
+
+
+
+               return authors;
     }
 
     public Book findBookByPage(int pageNumber) throws IOException {
@@ -117,22 +121,23 @@ be taken into account in the calculation of its author rating.*/
         List<Book> bookList= new ArrayList<>();
         reader.close();
         for(int i=0;i<books.size();i++){
-            if(books.get(i).getVolumeInfo().getPageCount()>pagesInMonth){
+            if(books.get(i).getVolumeInfo().getPageCount()<pagesInMonth){
                 bookList.add(books.get(i));
             }
         }
         double bestRating=0;
         for(int i=0; i<bookList.size();i++){
             if(bestRating<bookList.get(i).getVolumeInfo().getAverageRating()){
-                System.out.println(bookList.get(i).getVolumeInfo().getAverageRating());
-                bestRating=bookList.get(i).getVolumeInfo().getAverageRating();
+                bestRating=bookList.get(i).getVolumeInfo().getAverageRating(); } }
+
+        for (Iterator<Book> iterator = bookList.iterator(); iterator.hasNext(); ) {
+            Book book = iterator.next();
+            if (book.getVolumeInfo().getAverageRating()<bestRating) {
+                iterator.remove();
             }
+
         }
-        for(int i=0;i<bookList.size();i++){
-            if(bookList.get(i).getVolumeInfo().getAverageRating()<bestRating){
-                bookList.remove(books.get(i));
-            }
-        }
+
         return bookList;
 
     }
