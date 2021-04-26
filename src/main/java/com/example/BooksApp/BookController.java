@@ -44,6 +44,12 @@ public class BookController {
         return books;
     }
 
+    @GetMapping("books/recently")
+    public List<Book> findRecentlyViewedBooks() throws IOException {
+        List<Book> books=bookService.findRecentlyViewedBooks();
+        return books;
+    }
+
     public BookController(BookService bookService) {
         this.bookService = bookService;
     }
