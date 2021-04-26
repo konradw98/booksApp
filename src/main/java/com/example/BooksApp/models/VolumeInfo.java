@@ -1,5 +1,6 @@
 package com.example.BooksApp.models;
 
+import java.util.Date;
 import java.util.List;
 
 public class VolumeInfo{
@@ -20,11 +21,14 @@ public class VolumeInfo{
     private String previewLink;
     private String infoLink;
     private String canonicalVolumeLink;
+    private String subtitle;
+    private String publishedDate;
+    private String description;
 
     public VolumeInfo() {
     }
 
-    public VolumeInfo(String title, List<String> authors, String publisher, List<IndustryIdentifier> industryIdentifiers, ReadingModes readingModes, int pageCount, String printType, List<String> categories, double averageRating, String maturityRating, boolean allowAnonLogging, String contentVersion, ImageLinks imageLinks, String language, String previewLink, String infoLink, String canonicalVolumeLink) {
+    public VolumeInfo(String title, List<String> authors, String publisher, List<IndustryIdentifier> industryIdentifiers, ReadingModes readingModes, int pageCount, String printType, List<String> categories, double averageRating, String maturityRating, boolean allowAnonLogging, String contentVersion, ImageLinks imageLinks, String language, String previewLink, String infoLink, String canonicalVolumeLink, String subtitle, String publishedDate, String description) {
         this.title = title;
         this.authors = authors;
         this.publisher = publisher;
@@ -42,29 +46,9 @@ public class VolumeInfo{
         this.previewLink = previewLink;
         this.infoLink = infoLink;
         this.canonicalVolumeLink = canonicalVolumeLink;
-    }
-
-    @Override
-    public String toString() {
-        return "VolumeInfo{" +
-                "title='" + title + '\'' +
-                ", authors=" + authors +
-                ", publisher='" + publisher + '\'' +
-                ", industryIdentifiers=" + industryIdentifiers +
-                ", readingModes=" + readingModes +
-                ", pageCount=" + pageCount +
-                ", printType='" + printType + '\'' +
-                ", categories=" + categories +
-                ", averageRating=" + averageRating +
-                ", maturityRating='" + maturityRating + '\'' +
-                ", allowAnonLogging=" + allowAnonLogging +
-                ", contentVersion='" + contentVersion + '\'' +
-                ", imageLinks=" + imageLinks +
-                ", language='" + language + '\'' +
-                ", previewLink='" + previewLink + '\'' +
-                ", infoLink='" + infoLink + '\'' +
-                ", canonicalVolumeLink='" + canonicalVolumeLink + '\'' +
-                '}';
+        this.subtitle = subtitle;
+        this.publishedDate = publishedDate;
+        this.description = description;
     }
 
     public String getTitle() {
@@ -203,5 +187,28 @@ public class VolumeInfo{
         this.canonicalVolumeLink = canonicalVolumeLink;
     }
 
+    public String getSubtitle() {
+        return subtitle;
+    }
 
+    public void setSubtitle(String subtitle) {
+        this.subtitle = subtitle;
+    }
+
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getPublishedDate() {
+        return publishedDate;
+    }
+
+    public void setPublishedDate(String publishedDate) {
+        this.publishedDate = publishedDate;
+    }
 }
