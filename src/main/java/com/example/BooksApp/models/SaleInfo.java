@@ -1,9 +1,9 @@
 package com.example.BooksApp.models;
 
 public class SaleInfo{
-    public String country;
-    public String saleability;
-    public boolean isEbook;
+    private String country;
+    private String saleability;
+    private boolean isEbook;
 
     public SaleInfo() {
     }

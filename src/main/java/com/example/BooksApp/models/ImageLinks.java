@@ -1,8 +1,8 @@
 package com.example.BooksApp.models;
 
 public class ImageLinks{
-    public String smallThumbnail;
-    public String thumbnail;
+    private String smallThumbnail;
+    private String thumbnail;
 
     public ImageLinks() {
     }

@@ -1,8 +1,8 @@
 package com.example.BooksApp.models;
 
 public class Pdf{
-    public boolean isAvailable;
-    public String acsTokenLink;
+    private boolean isAvailable;
+    private String acsTokenLink;
 
     public Pdf() {
     }

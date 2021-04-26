@@ -1,8 +1,8 @@
 package com.example.BooksApp.models;
 
 public class ReadingModes{
-    public boolean text;
-    public boolean image;
+    private boolean text;
+    private boolean image;
 
     public ReadingModes() {
     }

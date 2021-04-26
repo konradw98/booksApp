@@ -1,13 +1,13 @@
 package com.example.BooksApp.models;
 
 public class Book{
-    public String kind;
-    public String id;
-    public String etag;
-    public String selfLink;
-    public VolumeInfo volumeInfo;
-    public SaleInfo saleInfo;
-    public AccessInfo accessInfo;
+    private String kind;
+    private String id;
+    private String etag;
+    private String selfLink;
+    private VolumeInfo volumeInfo;
+    private SaleInfo saleInfo;
+    private AccessInfo accessInfo;
 
     public Book() {
     }
@@ -20,6 +20,18 @@ public class Book{
         this.volumeInfo = volumeInfo;
         this.saleInfo = saleInfo;
         this.accessInfo = accessInfo;
+    }
+    @Override
+    public String toString() {
+        return "Book{" +
+                "kind='" + kind + '\'' +
+                ", id='" + id + '\'' +
+                ", etag='" + etag + '\'' +
+                ", selfLink='" + selfLink + '\'' +
+                ", volumeInfo=" + volumeInfo +
+                ", saleInfo=" + saleInfo +
+                ", accessInfo=" + accessInfo +
+                '}';
     }
 
     public String getKind() {
@@ -78,16 +90,5 @@ public class Book{
         this.accessInfo = accessInfo;
     }
 
-    @Override
-    public String toString() {
-        return "Book{" +
-                "kind='" + kind + '\'' +
-                ", id='" + id + '\'' +
-                ", etag='" + etag + '\'' +
-                ", selfLink='" + selfLink + '\'' +
-                ", volumeInfo=" + volumeInfo +
-                ", saleInfo=" + saleInfo +
-                ", accessInfo=" + accessInfo +
-                '}';
-    }
+
 }

@@ -15,39 +15,32 @@ public class BookController {
 
     @GetMapping("/books/{bookId}")
     public Book getBookById(@PathVariable String bookId) throws IOException {
-        Book book=bookService.findBookById(bookId);
-        return book;
+        return bookService.findBookById(bookId);
     }
 
     @GetMapping("books/category/{category}")
     public List<Book> getBooksByCategory(@PathVariable String category) throws IOException {
-        List<Book> books=bookService.findBooksByCategory(category);
-
-        return books;
+        return bookService.findBooksByCategory(category);
     }
 
     @GetMapping("books/authors")
     public List<Author> getAuthors() throws IOException {
-        List<Author> authors=bookService.findAuthorsAndRating();
-        return authors;
+        return bookService.findAuthorsAndRating();
     }
 
     @GetMapping("books/volume/{pageNumber}")
     public Book getBookByVolume(@PathVariable int pageNumber) throws IOException {
-        Book book=bookService.findBookByPage(pageNumber);
-        return book;
+        return bookService.findBookByPage(pageNumber);
     }
 
     @GetMapping("books/hours/{hours}/pages/{pages}")
     public List<Book> getBestBooksForMonth(@PathVariable int hours, @PathVariable int pages) throws IOException {
-        List<Book> books=bookService.findBestBooksForMonth(hours,pages);
-        return books;
+        return bookService.findBestBooksForMonth(hours,pages);
     }
 
     @GetMapping("books/recently")
     public List<Book> findRecentlyViewedBooks() throws IOException {
-        List<Book> books=bookService.findRecentlyViewedBooks();
-        return books;
+        return bookService.findRecentlyViewedBooks();
     }
 
     public BookController(BookService bookService) {

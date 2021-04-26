@@ -3,25 +3,68 @@ package com.example.BooksApp.models;
 import java.util.List;
 
 public class VolumeInfo{
-    public String title;
-    public List<String> authors;
-    public String publisher;
-    public List<IndustryIdentifier> industryIdentifiers;
-    public ReadingModes readingModes;
-    public int pageCount;
-    public String printType;
-    public List<String> categories;
-    public double averageRating;
-    public String maturityRating;
-    public boolean allowAnonLogging;
-    public String contentVersion;
-    public ImageLinks imageLinks;
-    public String language;
-    public String previewLink;
-    public String infoLink;
-    public String canonicalVolumeLink;
+    private String title;
+    private List<String> authors;
+    private String publisher;
+    private List<IndustryIdentifier> industryIdentifiers;
+    private ReadingModes readingModes;
+    private int pageCount;
+    private String printType;
+    private List<String> categories;
+    private double averageRating;
+    private String maturityRating;
+    private boolean allowAnonLogging;
+    private String contentVersion;
+    private ImageLinks imageLinks;
+    private String language;
+    private String previewLink;
+    private String infoLink;
+    private String canonicalVolumeLink;
 
     public VolumeInfo() {
+    }
+
+    public VolumeInfo(String title, List<String> authors, String publisher, List<IndustryIdentifier> industryIdentifiers, ReadingModes readingModes, int pageCount, String printType, List<String> categories, double averageRating, String maturityRating, boolean allowAnonLogging, String contentVersion, ImageLinks imageLinks, String language, String previewLink, String infoLink, String canonicalVolumeLink) {
+        this.title = title;
+        this.authors = authors;
+        this.publisher = publisher;
+        this.industryIdentifiers = industryIdentifiers;
+        this.readingModes = readingModes;
+        this.pageCount = pageCount;
+        this.printType = printType;
+        this.categories = categories;
+        this.averageRating = averageRating;
+        this.maturityRating = maturityRating;
+        this.allowAnonLogging = allowAnonLogging;
+        this.contentVersion = contentVersion;
+        this.imageLinks = imageLinks;
+        this.language = language;
+        this.previewLink = previewLink;
+        this.infoLink = infoLink;
+        this.canonicalVolumeLink = canonicalVolumeLink;
+    }
+
+    @Override
+    public String toString() {
+        return "VolumeInfo{" +
+                "title='" + title + '\'' +
+                ", authors=" + authors +
+                ", publisher='" + publisher + '\'' +
+                ", industryIdentifiers=" + industryIdentifiers +
+                ", readingModes=" + readingModes +
+                ", pageCount=" + pageCount +
+                ", printType='" + printType + '\'' +
+                ", categories=" + categories +
+                ", averageRating=" + averageRating +
+                ", maturityRating='" + maturityRating + '\'' +
+                ", allowAnonLogging=" + allowAnonLogging +
+                ", contentVersion='" + contentVersion + '\'' +
+                ", imageLinks=" + imageLinks +
+                ", language='" + language + '\'' +
+                ", previewLink='" + previewLink + '\'' +
+                ", infoLink='" + infoLink + '\'' +
+                ", canonicalVolumeLink='" + canonicalVolumeLink + '\'' +
+                '}';
     }
 
     public String getTitle() {
@@ -160,46 +203,5 @@ public class VolumeInfo{
         this.canonicalVolumeLink = canonicalVolumeLink;
     }
 
-    public VolumeInfo(String title, List<String> authors, String publisher, List<IndustryIdentifier> industryIdentifiers, ReadingModes readingModes, int pageCount, String printType, List<String> categories, double averageRating, String maturityRating, boolean allowAnonLogging, String contentVersion, ImageLinks imageLinks, String language, String previewLink, String infoLink, String canonicalVolumeLink) {
-        this.title = title;
-        this.authors = authors;
-        this.publisher = publisher;
-        this.industryIdentifiers = industryIdentifiers;
-        this.readingModes = readingModes;
-        this.pageCount = pageCount;
-        this.printType = printType;
-        this.categories = categories;
-        this.averageRating = averageRating;
-        this.maturityRating = maturityRating;
-        this.allowAnonLogging = allowAnonLogging;
-        this.contentVersion = contentVersion;
-        this.imageLinks = imageLinks;
-        this.language = language;
-        this.previewLink = previewLink;
-        this.infoLink = infoLink;
-        this.canonicalVolumeLink = canonicalVolumeLink;
-    }
 
-    @Override
-    public String toString() {
-        return "VolumeInfo{" +
-                "title='" + title + '\'' +
-                ", authors=" + authors +
-                ", publisher='" + publisher + '\'' +
-                ", industryIdentifiers=" + industryIdentifiers +
-                ", readingModes=" + readingModes +
-                ", pageCount=" + pageCount +
-                ", printType='" + printType + '\'' +
-                ", categories=" + categories +
-                ", averageRating=" + averageRating +
-                ", maturityRating='" + maturityRating + '\'' +
-                ", allowAnonLogging=" + allowAnonLogging +
-                ", contentVersion='" + contentVersion + '\'' +
-                ", imageLinks=" + imageLinks +
-                ", language='" + language + '\'' +
-                ", previewLink='" + previewLink + '\'' +
-                ", infoLink='" + infoLink + '\'' +
-                ", canonicalVolumeLink='" + canonicalVolumeLink + '\'' +
-                '}';
-    }
 }

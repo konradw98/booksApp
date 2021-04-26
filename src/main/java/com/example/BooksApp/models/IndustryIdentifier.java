@@ -1,8 +1,8 @@
 package com.example.BooksApp.models;
 
 public class IndustryIdentifier{
-    public String type;
-    public String identifier;
+    private String type;
+    private String identifier;
 
     public IndustryIdentifier() {
     }
