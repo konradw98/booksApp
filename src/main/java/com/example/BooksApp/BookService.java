@@ -17,7 +17,9 @@ import java.util.*;
 
 @Service
 public class BookService {
-    LRUCache lruCache;
+    private LRUCache lruCache;
+    private final int dayInMonth=30;
+
 
     public Book findBookById(String bookIsbn) throws IOException {
         Gson gson = new Gson();
@@ -117,7 +119,7 @@ public class BookService {
     }
 
     public List<Book> findBestBooksForMonth(int hours, int pages) throws IOException {
-        int pagesInMonth = hours * pages * 30;
+        int pagesInMonth = hours * pages * dayInMonth;
         Gson gson = new Gson();
         Reader reader = Files.newBufferedReader(Paths.get("src/main/resources/books.json"));
         List<Book> books = Arrays.asList(gson.fromJson(reader, Book[].class));
