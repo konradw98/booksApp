@@ -25,3 +25,9 @@ Spring is the most popular application development framework for enterprise Java
 ### Application testing
 * JUNIT - used to create simple unit tests.
 * POSTMAN - used to test the endpoints and see what they return. A simple and interesting tool to make web application testing easier. 
+
+# TO DO 
+* CODE REFACTOR 
+* BETTER TESTING 
+
+###### App made as a recruitment assignment for Wunderman Thompson.
