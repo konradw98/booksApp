@@ -21,7 +21,7 @@ public class BookService {
     private final int dayInMonth=30;
 
 
-    public Book findBookById(String bookIsbn) throws IOException {
+    public Book findBookByIsbn(String bookIsbn) throws IOException {
         Gson gson = new Gson();
         Reader reader = Files.newBufferedReader(Paths.get("src/main/resources/books.json"));
         List<Book> books = Arrays.asList(gson.fromJson(reader, Book[].class));

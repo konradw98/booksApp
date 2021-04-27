@@ -18,7 +18,7 @@ public class BookController {
 
     @GetMapping("/books/{bookIsbn}")
     public BookFinal getBookByIsbn(@PathVariable String bookIsbn) throws IOException {
-        Book book= bookService.findBookById(bookIsbn);
+        Book book= bookService.findBookByIsbn(bookIsbn);
         BookFinal bookFinal=bookToBookFinal(book);
         return bookFinal;
     }
@@ -73,7 +73,7 @@ public class BookController {
             if(identifier.getType().equals("ISBN_13")){
                 bookFinal.setIsbn(identifier.getIdentifier()); }
         }
-        if(bookFinal.getIsbn().isEmpty()){
+        if(bookFinal.getIsbn()==null){
             bookFinal.setIsbn(book.getId());
         }
         bookFinal.setTitle(book.getVolumeInfo().getTitle());
