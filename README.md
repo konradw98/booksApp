@@ -21,3 +21,7 @@ Spring is the most popular application development framework for enterprise Java
 ### Design paterns
 * Dependency Injection (DI) - One of the main design patterns in Spring. The class is independent of any particular implementation. This makes it configurable by the client, which promotes reusability and maintainability.
 * Model-View-Controller -  helps you create applications that separate the different aspects of the application (input logic, business logic, and UI logic), while providing a loose coupling between these elements.
+
+### Application testing
+* JUNIT - used to create simple unit tests.
+* POSTMAN - used to test the endpoints and see what they return. A simple and interesting tool to make web application testing easier. 

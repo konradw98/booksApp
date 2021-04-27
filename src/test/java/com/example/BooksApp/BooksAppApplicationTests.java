@@ -1,6 +1,7 @@
 package com.example.BooksApp;
 
 import com.example.BooksApp.models.Book;
+import com.example.BooksApp.models.BookFinal;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,10 @@ class BooksAppApplicationTests {
 	@Autowired
 	private  BookService service;
 
+	@Autowired
+	private  BookController controller;
+
+	//BOOK SERVICE TEST
 	@Test
 	void findBookByIdTest() throws IOException {
 		String isbn="9781575211534";
@@ -49,6 +54,41 @@ class BooksAppApplicationTests {
 		int bigNumber1=100;
 		int bigNumber2=100;
 		List<Book> books=service.findBestBooksForMonth(bigNumber1,bigNumber2);
+		int numOfBooks=2;
+		assertEquals(books.size(),numOfBooks);
+
+	}
+
+	//BOOK CONTROLLER TEST
+	@Test
+	void getBookByIsbnTest() throws IOException {
+		String isbn="9781575211534";
+		String title="Java unleashed";
+		BookFinal book=controller.getBookByIsbn(isbn);
+		assertEquals(book.getTitle(),title);
+	}
+
+	@Test
+	void getBookByCategoryTest() throws IOException {
+		String category="Java";
+		int volume=2;
+		List<BookFinal> books=controller.getBooksByCategory(category);
+		assertEquals(books.size(),volume);
+	}
+
+	@Test
+	void getBookByVolumeTest() throws IOException {
+		int pageNumber=300;
+		BookFinal books=controller.getBookByVolume(pageNumber);
+		String title="The Religion of Java";
+		assertEquals(books.getTitle(),title);
+	}
+
+	@Test
+	void getBooksForMonthTest() throws IOException {
+		int bigNumber1=100;
+		int bigNumber2=100;
+		List<BookFinal> books=controller.getBestBooksForMonth(bigNumber1,bigNumber2);
 		int numOfBooks=2;
 		assertEquals(books.size(),numOfBooks);
 
