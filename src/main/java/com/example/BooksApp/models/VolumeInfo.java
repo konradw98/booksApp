@@ -3,7 +3,7 @@ package com.example.BooksApp.models;
 import java.util.Date;
 import java.util.List;
 
-public class VolumeInfo{
+public class VolumeInfo {
     private String title;
     private List<String> authors;
     private String publisher;

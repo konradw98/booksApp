@@ -1,6 +1,6 @@
 package com.example.BooksApp.models;
 
-public class Epub{
+public class Epub {
     private boolean isAvailable;
     private String acsTokenLink;
 
@@ -10,13 +10,6 @@ public class Epub{
     public Epub(boolean isAvailable, String acsTokenLink) {
         this.isAvailable = isAvailable;
         this.acsTokenLink = acsTokenLink;
-    }
-    @Override
-    public String toString() {
-        return "Epub{" +
-                "isAvailable=" + isAvailable +
-                ", acsTokenLink='" + acsTokenLink + '\'' +
-                '}';
     }
 
     public boolean isAvailable() {

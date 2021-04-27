@@ -18,17 +18,17 @@ public class BookController {
 
     @GetMapping("/books/{bookIsbn}")
     public BookFinal getBookByIsbn(@PathVariable String bookIsbn) throws IOException {
-        Book book= bookService.findBookByIsbn(bookIsbn);
-        BookFinal bookFinal=bookToBookFinal(book);
+        Book book = bookService.findBookByIsbn(bookIsbn);
+        BookFinal bookFinal = bookToBookFinal(book);
         return bookFinal;
     }
 
 
     @GetMapping("books/category/{category}")
     public List<BookFinal> getBooksByCategory(@PathVariable String category) throws IOException {
-        List<Book> books=bookService.findBooksByCategory(category);
-        List<BookFinal> bookFinals=new ArrayList<>();
-        for (Book book:books) {
+        List<Book> books = bookService.findBooksByCategory(category);
+        List<BookFinal> bookFinals = new ArrayList<>();
+        for (Book book : books) {
             bookFinals.add(bookToBookFinal(book));
         }
         return bookFinals;
@@ -41,39 +41,40 @@ public class BookController {
 
     @GetMapping("books/volume/{pageNumber}")
     public BookFinal getBookByVolume(@PathVariable int pageNumber) throws IOException {
-        Book book= bookService.findBookByPage(pageNumber);
-        BookFinal bookFinal=bookToBookFinal(book);
+        Book book = bookService.findBookByPage(pageNumber);
+        BookFinal bookFinal = bookToBookFinal(book);
         return bookFinal;
     }
 
     @GetMapping("books/hours/{hours}/pages/{pages}")
     public List<BookFinal> getBestBooksForMonth(@PathVariable int hours, @PathVariable int pages) throws IOException {
-        List<Book> books=bookService.findBestBooksForMonth(hours,pages);
-        List<BookFinal> bookFinals=new ArrayList<>();
-        for (Book book:books) {
+        List<Book> books = bookService.findBestBooksForMonth(hours, pages);
+        List<BookFinal> bookFinals = new ArrayList<>();
+        for (Book book : books) {
             bookFinals.add(bookToBookFinal(book));
         }
         return bookFinals;
     }
 
     @GetMapping("books/recently")
-    public List<BookFinal> findRecentlyViewedBooks() throws IOException {
-        List<Book> books=bookService.findRecentlyViewedBooks();
-        List<BookFinal> bookFinals=new ArrayList<>();
-        for (Book book:books) {
+    public List<BookFinal> getRecentlyViewedBooks() throws IOException {
+        List<Book> books = bookService.findRecentlyViewedBooks();
+        List<BookFinal> bookFinals = new ArrayList<>();
+        for (Book book : books) {
             bookFinals.add(bookToBookFinal(book));
         }
         return bookFinals;
     }
 
-    public BookFinal bookToBookFinal(Book book){
-        BookFinal bookFinal=new BookFinal();
+    public BookFinal bookToBookFinal(Book book) {
+        BookFinal bookFinal = new BookFinal();
 
-        for(IndustryIdentifier identifier:book.getVolumeInfo().getIndustryIdentifiers()){
-            if(identifier.getType().equals("ISBN_13")){
-                bookFinal.setIsbn(identifier.getIdentifier()); }
+        for (IndustryIdentifier identifier : book.getVolumeInfo().getIndustryIdentifiers()) {
+            if (identifier.getType().equals("ISBN_13")) {
+                bookFinal.setIsbn(identifier.getIdentifier());
+            }
         }
-        if(bookFinal.getIsbn()==null){
+        if (bookFinal.getIsbn() == null) {
             bookFinal.setIsbn(book.getId());
         }
         bookFinal.setTitle(book.getVolumeInfo().getTitle());

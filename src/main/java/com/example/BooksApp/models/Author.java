@@ -5,7 +5,6 @@ public class Author {
     private double rating;
 
 
-
     public Author() {
     }
 

@@ -4,7 +4,6 @@ import com.example.BooksApp.models.Author;
 import com.example.BooksApp.models.Book;
 import com.example.BooksApp.models.IndustryIdentifier;
 import com.google.gson.Gson;
-import org.springframework.expression.spel.ast.Identifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -18,7 +17,7 @@ import java.util.*;
 @Service
 public class BookService {
     private LRUCache lruCache;
-    private final int dayInMonth=30;
+    private final int dayInMonth = 30;
 
 
     public Book findBookByIsbn(String bookIsbn) throws IOException {
@@ -28,26 +27,26 @@ public class BookService {
         reader.close();
 
         Book book = new Book();
-        for (int i=0;i<books.size();i++) {
-           for(IndustryIdentifier identifier:books.get(i).getVolumeInfo().getIndustryIdentifiers()){
-               if(identifier.getType().equals("ISBN_13")&& identifier.getIdentifier().equals(bookIsbn)){
-                   book=books.get(i);
-               }
-           }
+        for (int i = 0; i < books.size(); i++) {
+            for (IndustryIdentifier identifier : books.get(i).getVolumeInfo().getIndustryIdentifiers()) {
+                if (identifier.getType().equals("ISBN_13") && identifier.getIdentifier().equals(bookIsbn)) {
+                    book = books.get(i);
+                }
+            }
         }
         if (book.getId() == null) {
-            for (Book value : books){
+            for (Book value : books) {
                 if (value.getId().equals(bookIsbn)) {
                     book = value;
                 }
             }
         }
-            if (book.getId() == null) {
+        if (book.getId() == null) {
             throw new ResponseStatusException(
                     HttpStatus.NOT_FOUND, "entity not found"
             );
         }
-        lruCache.refer(book.getId(),new Date().getTime());
+        lruCache.refer(book.getId(), new Date().getTime());
         return book;
     }
 
@@ -114,7 +113,9 @@ public class BookService {
         for (Book value : books) {
             if (value.getVolumeInfo().getPageCount() > pageNumber) {
                 book = value;
-                break; } }
+                break;
+            }
+        }
         return book;
     }
 
@@ -147,20 +148,20 @@ public class BookService {
 
     }
 
-   public List<Book> findRecentlyViewedBooks() throws IOException {
-       Gson gson = new Gson();
-       Reader reader = Files.newBufferedReader(Paths.get("src/main/resources/books.json"));
-       List<Book> books = Arrays.asList(gson.fromJson(reader, Book[].class));
-       List<String> booksIds=(List<String>)lruCache.getDoublyQueue();
-       List<Book> recentlyViewedBooks= new ArrayList<>();
+    public List<Book> findRecentlyViewedBooks() throws IOException {
+        Gson gson = new Gson();
+        Reader reader = Files.newBufferedReader(Paths.get("src/main/resources/books.json"));
+        List<Book> books = Arrays.asList(gson.fromJson(reader, Book[].class));
+        List<String> booksIds = (List<String>) lruCache.getDoublyQueue();
+        List<Book> recentlyViewedBooks = new ArrayList<>();
 
-       for(Book book : books){
-           if(booksIds.contains(book.getId())){
-               recentlyViewedBooks.add(book);
-           }
-       }
-       return recentlyViewedBooks;
-   }
+        for (Book book : books) {
+            if (booksIds.contains(book.getId())) {
+                recentlyViewedBooks.add(book);
+            }
+        }
+        return recentlyViewedBooks;
+    }
 
     public BookService(LRUCache lruCache) {
         this.lruCache = lruCache;

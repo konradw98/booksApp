@@ -1,6 +1,6 @@
 package com.example.BooksApp.models;
 
-public class SaleInfo{
+public class SaleInfo {
     private String country;
     private String saleability;
     private boolean isEbook;
@@ -14,14 +14,6 @@ public class SaleInfo{
         this.isEbook = isEbook;
     }
 
-    @Override
-    public String toString() {
-        return "SaleInfo{" +
-                "country='" + country + '\'' +
-                ", saleability='" + saleability + '\'' +
-                ", isEbook=" + isEbook +
-                '}';
-    }
 
     public String getCountry() {
         return country;

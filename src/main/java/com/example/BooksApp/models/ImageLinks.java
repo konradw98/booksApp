@@ -1,6 +1,6 @@
 package com.example.BooksApp.models;
 
-public class ImageLinks{
+public class ImageLinks {
     private String smallThumbnail;
     private String thumbnail;
 
@@ -12,13 +12,6 @@ public class ImageLinks{
         this.thumbnail = thumbnail;
     }
 
-    @Override
-    public String toString() {
-        return "ImageLinks{" +
-                "smallThumbnail='" + smallThumbnail + '\'' +
-                ", thumbnail='" + thumbnail + '\'' +
-                '}';
-    }
 
     public String getSmallThumbnail() {
         return smallThumbnail;

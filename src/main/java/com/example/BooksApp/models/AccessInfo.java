@@ -1,6 +1,6 @@
 package com.example.BooksApp.models;
 
-public class AccessInfo{
+public class AccessInfo {
     private String country;
     private String viewability;
     private boolean embeddable;

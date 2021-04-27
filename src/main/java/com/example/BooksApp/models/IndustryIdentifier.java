@@ -1,6 +1,6 @@
 package com.example.BooksApp.models;
 
-public class IndustryIdentifier{
+public class IndustryIdentifier {
     private String type;
     private String identifier;
 
@@ -12,13 +12,6 @@ public class IndustryIdentifier{
         this.identifier = identifier;
     }
 
-    @Override
-    public String toString() {
-        return "IndustryIdentifier{" +
-                "type='" + type + '\'' +
-                ", identifier='" + identifier + '\'' +
-                '}';
-    }
 
     public String getType() {
         return type;

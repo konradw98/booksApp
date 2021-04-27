@@ -1,6 +1,6 @@
 package com.example.BooksApp.models;
 
-public class Pdf{
+public class Pdf {
     private boolean isAvailable;
     private String acsTokenLink;
 
@@ -12,13 +12,6 @@ public class Pdf{
         this.acsTokenLink = acsTokenLink;
     }
 
-    @Override
-    public String toString() {
-        return "Pdf{" +
-                "isAvailable=" + isAvailable +
-                ", acsTokenLink='" + acsTokenLink + '\'' +
-                '}';
-    }
 
     public boolean isAvailable() {
         return isAvailable;

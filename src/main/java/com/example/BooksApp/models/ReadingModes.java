@@ -1,6 +1,6 @@
 package com.example.BooksApp.models;
 
-public class ReadingModes{
+public class ReadingModes {
     private boolean text;
     private boolean image;
 
@@ -12,13 +12,6 @@ public class ReadingModes{
         this.image = image;
     }
 
-    @Override
-    public String toString() {
-        return "ReadingModes{" +
-                "text=" + text +
-                ", image=" + image +
-                '}';
-    }
 
     public boolean isText() {
         return text;

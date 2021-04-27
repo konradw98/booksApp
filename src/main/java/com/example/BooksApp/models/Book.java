@@ -1,6 +1,6 @@
 package com.example.BooksApp.models;
 
-public class Book{
+public class Book {
     private String kind;
     private String id;
     private String etag;
@@ -21,6 +21,7 @@ public class Book{
         this.saleInfo = saleInfo;
         this.accessInfo = accessInfo;
     }
+
     @Override
     public String toString() {
         return "Book{" +
