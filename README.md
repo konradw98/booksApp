@@ -29,5 +29,3 @@ Spring is the most popular application development framework for enterprise Java
 # TO DO 
 * CODE REFACTOR 
 * BETTER TESTING 
-
-###### App made as a recruitment assignment for Wunderman Thompson.
